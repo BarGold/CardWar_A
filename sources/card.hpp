@@ -6,7 +6,7 @@ namespace ariel{
     {
     private:
         int num;
-        string shape;//Spades , Hearts , Clubs , Diamonds
+        string shape; //Spades , Hearts , Clubs , Diamonds
     public:
     
     };
