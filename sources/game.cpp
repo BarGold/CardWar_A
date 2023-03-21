@@ -1,4 +1,4 @@
-#include "sources/game.hpp"
+#include "game.hpp"
 
 namespace ariel
 {
@@ -19,7 +19,7 @@ namespace ariel
 
         }
         void playTurn(){
-                
+
         }
         
 }

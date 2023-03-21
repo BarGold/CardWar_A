@@ -1,6 +1,6 @@
-#include "sources/card.hpp"
+#include "card.hpp"
 
 namespace ariel
 {
-    
+
 }

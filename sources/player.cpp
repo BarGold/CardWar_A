@@ -1,4 +1,4 @@
-#include "sources/player.hpp"
+#include "Player.hpp"
 
 
 namespace ariel
