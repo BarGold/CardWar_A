@@ -8,6 +8,8 @@ namespace ariel
     {
     private:
         string name;
+        int stacksize;  //  amount of cards left
+        int cardesTaken; //amount of cards this player has won. 
 
     public:
         Player(string name);
