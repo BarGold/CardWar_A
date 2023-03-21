@@ -40,8 +40,27 @@ TEST_CASE("Good Game"){
         CHECK(p1.cardesTaken() >= 1);
     }
     game.playTurn();
-    CHECK(p1.stacksize() <= 24);
-    CHECK(p2.stacksize() <= 24);
+    CHECK(p3.stacksize() <= 24);
+    CHECK(p4.stacksize() <= 24);
+    CHECK(p3.getName() == "Bar");
+    CHECK(p4.getName() == "Gal");
+    CHECK(p2.getName() == "Bob");
+    CHECK(p1.getName() == "Alice");
+
+
+        // test for stacksize()
+    CHECK(p3.stacksize() == 26);
+    CHECK(p4.stacksize() == 26);
+    game.playTurn();
+    if(game.get_Wins_Name() == "Bar"){ // player p3 is win 
+       CHECK(p3.cardesTaken() >= 1);
+    }
+    else{ // player p3 is loss
+        CHECK(p4.cardesTaken() >= 1);
+    }
+    game.playTurn();
+    CHECK(p3.stacksize() <= 24);
+    CHECK(p4.stacksize() <= 24);
     CHECK(p2.getName() == "Bob");
     CHECK(p1.getName() == "Alice");
 
