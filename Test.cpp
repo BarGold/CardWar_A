@@ -34,7 +34,11 @@ TEST_CASE("Good Game"){
     CHECK(p5.stacksize() == 0);
     game.playTurn();
     if(p2.cardesTaken() == 1){
-        p2.cardesTaken()
+       CHECK(p2.cardesTaken() == 1);
+       CHECK(game.printWiner == "Bob");
+    }
+    else{
+
     }
     game.playTurn();
     CHECK(p1.stacksize() <= 24);
