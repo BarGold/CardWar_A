@@ -17,6 +17,8 @@ Player p2("Bob");
 Player p3("Bar");
 Player p4("Gal");
 
+Player p5("Niv"); // player that create but not play any Game
+
 // Create games with 4 players
 Game game(p1,p2);
 Game game1(p3,p4);
@@ -25,6 +27,19 @@ Game game3(p2,p4);
 
 
 TEST_CASE("Good Game"){
+
+    // test for stacksize()
+    CHECK(p1.stacksize() == 26);
+    CHECK(p2.stacksize() == 26);
+    CHECK(p5.stacksize() == 0);
+    game.playTurn();
+    if(p2.cardesTaken() == 1){
+        p2.cardesTaken()
+    }
+    game.playTurn();
+    CHECK(p1.stacksize() <= 24);
+    CHECK(p2.stacksize() <= 24);
+
 
 }
 
