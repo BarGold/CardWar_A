@@ -13,7 +13,8 @@ namespace ariel
         Player(string name);
 
         void getName();
-
+        
+        // function of player
         int stacksize();
         int cardesTaken();
 
