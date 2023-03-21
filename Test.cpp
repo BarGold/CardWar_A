@@ -33,7 +33,7 @@ TEST_CASE("Good Game"){
     CHECK(p2.stacksize() == 26);
     CHECK(p5.stacksize() == 0);
     game.playTurn();
-    if(p2.cardesTaken() >= 1){ // player p2 is win 
+    if(game.get_Wins_Name() == "Bob"){ // player p2 is win 
        CHECK(p2.cardesTaken() >= 1);
     }
     else{ // player p2 is loss
@@ -42,6 +42,8 @@ TEST_CASE("Good Game"){
     game.playTurn();
     CHECK(p1.stacksize() <= 24);
     CHECK(p2.stacksize() <= 24);
+    CHECK(p2.getName() == "Bob");
+    CHECK(p1.getName() == "Alice");
 
 
 }

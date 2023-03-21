@@ -12,9 +12,8 @@ namespace ariel
     public:
         Player(string name);
 
-        void getName();
+        string getName();
         
-        // function of player
         int stacksize();
         int cardesTaken();
 
