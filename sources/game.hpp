@@ -1,12 +1,15 @@
-# include <string>
+#include <string>
 using namespace std;
-namespace ariel{
+namespace ariel
+{
 
     class Game
     {
-    private:
-        
+    
+
     public:
+        Game(Player p1, Player p2);
+
         void playAll();
         void printWiner();
         void printLog();
@@ -15,5 +18,4 @@ namespace ariel{
         void playTurn();
     };
 
-  
 }
