@@ -7,7 +7,7 @@ namespace ariel
         char *name;
 
     public:
-        int Stacksize();
+        int stacksize();
         int cardesTaken();
     };
 
