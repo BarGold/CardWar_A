@@ -8,6 +8,8 @@ namespace ariel
     private:
         Player winner;
         Card Card;
+        double draw_rate;
+        int draw_amount; //  (draw within a draw counts as 2 draws. ) 
 
     public:
         Game(Player p1, Player p2);
