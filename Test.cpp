@@ -46,6 +46,9 @@ TEST_CASE("Good Game"){
     CHECK(p4.getName() == "Gal");
     CHECK(p2.getName() == "Bob");
     CHECK(p1.getName() == "Alice");
+    game.playTurn();
+
+    
 
 
         // test for stacksize()

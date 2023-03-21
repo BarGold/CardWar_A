@@ -8,8 +8,8 @@ namespace ariel
     {
     private:
         string name;
-        int stacksize;  //amount of cards left
-        int cardesTaken; //amount of cards this player has won. 
+        int stack_size;  //amount of cards left
+        int cardes_Taken; //amount of cards this player has won. 
         double win_rate;
         //cards won;
 
