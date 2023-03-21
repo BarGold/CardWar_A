@@ -50,5 +50,5 @@ TEST_CASE("Good Game"){
 
 TEST_CASE("Bad Game")
 {
-    CHECK_THROWS(); // 
+    
 }
