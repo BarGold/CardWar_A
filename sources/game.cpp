@@ -2,11 +2,17 @@
 
 namespace ariel
 {
-        int stacksize(){
-
+        string get_Wins_Name()
+        {
+                return "";
         }
-        int cardesTaken(){
+        string get_Shape_Card(); // get the shape of card (to the printLastTurn()) 
 
-        }
+        void playAll();
+        void printWiner();
+        void printLog();
+        void printStats();
+        void printLastTurn();
+        void playTurn();  
         
 }

@@ -16,8 +16,6 @@ namespace ariel
     public:
         Player(string name);
 
-        string getName();
-        double get_win_rate();
         double set_win_rate();
 
         int stacksize();
