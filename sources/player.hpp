@@ -18,6 +18,7 @@ namespace ariel
         string name;
         int stack_size;   // amount of cards left
         int cardes_Taken; // amount of cards this player has won.
+
         double win_rate;
 
         bool win; // if he win 1 , loss 0
@@ -25,12 +26,21 @@ namespace ariel
         // cards won;
 
     public:
-        Player();
         Player(string name);
-        double set_win_rate();
+
+        string getName();
 
         int stacksize();
+        void set_stacksize();
         int cardesTaken();
+        void set_cardesTaken();
+
+        void set_win_rate();
+        double get_win_rate();
+
+        void set_win();
+        bool get_win();
+
     };
 
 }
