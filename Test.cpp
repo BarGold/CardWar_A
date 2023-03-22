@@ -31,14 +31,17 @@ TEST_CASE("Good Game"){
     // test for stacksize()
     CHECK(p1.stacksize() == 26);
     CHECK(p2.stacksize() == 26);
+    CHECK(p1.cardesTaken() == 0); // new game
+    CHECK(p2.cardesTaken() == 0); // new game
     CHECK(p5.stacksize() == 0);
-    game.playTurn();
+
+    game.playTurn(); 
     
     if(p2.get_win() == 1){ // player p2 is win 
-       CHECK(p2.cardesTaken() >= 1);
+       CHECK(p2.cardesTaken() >= 2);
     }
     else{ // player p2 is loss
-        CHECK(p1.cardesTaken() >= 1);
+        CHECK(p1.cardesTaken() >= 2);
     }
     game.playTurn();
     CHECK(p3.stacksize() <= 24);
@@ -48,18 +51,37 @@ TEST_CASE("Good Game"){
     CHECK(p2.getName() == "Bob");
     CHECK(p1.getName() == "Alice");
     game.playTurn();
- 
-    
 
     // test for stacksize()
     CHECK(p3.stacksize() == 26);
     CHECK(p4.stacksize() == 26);
+    CHECK(p3.cardesTaken() == 0); // new game
+    CHECK(p4.cardesTaken() == 0); // new game
+
+    CHECK(p5.stacksize() == 0); // stay amount of cards left = 0 dont play
+    CHECK(p5.cardesTaken() == 0);
+
     game1.playTurn();
-    if(p3.get_win() == 1){ // player p3 is win 
-       CHECK(p3.cardesTaken() >= 1);
+    if (p3.get_win() == 1 && game1.get_war() == 0) // no war in this turn
+    {                                              // player p3 is win
+        CHECK(p3.cardesTaken() == 2);
+        CHECK(p4.cardesTaken() == 0);
     }
-    else{ // player p3 is loss
-        CHECK(p4.cardesTaken() >= 1);
+    if (p4.get_win() == 1 && game1.get_war() == 0)
+    {
+        CHECK(p4.cardesTaken() == 2);
+        CHECK(p3.cardesTaken() == 0);
+    }
+    else
+    { // was a war
+        if (p3.get_win() == 1)
+        {
+            CHECK(p4.cardesTaken() == 0);
+        }
+        if (p4.get_win() == 1)
+        {
+            CHECK(p3.cardesTaken() == 0);
+        }
     }
     game1.playTurn();
     CHECK(p3.stacksize() <= 24);

@@ -32,6 +32,7 @@ namespace ariel
 
         int stacksize();
         void set_stacksize();
+        
         int cardesTaken();
         void set_cardesTaken();
 
