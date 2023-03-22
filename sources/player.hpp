@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "card.hpp"
 using namespace std;
 
 namespace ariel
@@ -18,6 +19,9 @@ namespace ariel
         int stack_size;   // amount of cards left
         int cardes_Taken; // amount of cards this player has won.
         double win_rate;
+
+        bool win; // if he win 1 , loss 0
+        ariel::Card card_Play; // player card for turn
         // cards won;
 
     public:

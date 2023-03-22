@@ -9,7 +9,9 @@ namespace ariel
     class Game
     {
     private:
-        ariel::Player winner;
+        ariel::Player p1;
+        ariel::Player p2;
+
         double draw_rate;
         int draw_amount; //  (draw within a draw counts as 2 draws. ) 
 
@@ -19,9 +21,9 @@ namespace ariel
         
 
         void playTurn(); // play turn
-        void printLastTurn();
+        void printLastTurn(); // print the last turn stats.
 
-        void playAll();
+        void playAll(); //playes the game untill the end
         void printWiner();
         void printLog();
         void printStats();
