@@ -10,8 +10,6 @@ namespace ariel{
         int num;
         string shape; //Spades , Hearts , Clubs , Diamonds
     public:
-        int get_num();
-        string get_shapr();
     
     };
   
