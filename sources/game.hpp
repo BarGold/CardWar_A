@@ -1,5 +1,10 @@
 #include <string>
+#include <stdexcept>
+#include "player.hpp"
+#ifndef PLAYER_H
 using namespace std;
+using  ariel::Player;
+
 namespace ariel
 {
 
@@ -20,5 +25,6 @@ namespace ariel
         void printLastTurn();
         void playTurn();
     };
+    #endif
 
 }
