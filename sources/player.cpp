@@ -1,17 +1,16 @@
 #include "player.hpp"
 
-
 namespace ariel
 {
 
-        double set_win_rate(){
+        double Player::set_win_rate(){
             return 0;
         }
 
-        int stacksize(){
+        int Player::stacksize(){
             return 0;
         }
-        int cardesTaken(){
+        int Player::cardesTaken(){
              return 0;
         }
         

@@ -3,23 +3,23 @@
 namespace ariel
 {
 
-        void playAll(){
+        void Game::playAll(){
 
         }
-        void printWiner(){
+        void Game::printWiner(){
 
         }
-        void printLog(){
+        void Game::printLog(){
 
         }
-        void printStats(){
+        void Game::printStats(){
 
         }
-        void printLastTurn(){
+        void Game::printLastTurn(){
 
         }
-        void playTurn(){
-
+        void Game::playTurn(){
+                
         }
         
 }
