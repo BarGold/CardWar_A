@@ -1,9 +1,9 @@
-#include <string>
-#include <iostream>
-#include "player.hpp"
-
 #ifndef GAME_H
 #define GAME_H
+
+#include <string>
+// #include <iostream>
+#include "player.hpp"
 using namespace std;
 
 namespace ariel
