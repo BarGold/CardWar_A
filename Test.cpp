@@ -9,17 +9,20 @@ using namespace std;
 using namespace ariel;
 
 
-// Create 4 players with their names
+// Create players with their names
 Player p1("Alice");
 Player p2("Bob");
 Player p3("Bar");
 Player p4("Gal");
-Player p7("Aviv");
-Player p8("Or");
 
 Player p5("Niv"); // player that create but not play any Game
 
-// Create games with 4 players
+Player p7("Aviv");
+Player p8("Or");
+
+
+
+// Create games
 Game game(p1,p2);
 Game game1(p3,p4);
 Game game3(p7,p8);
@@ -33,8 +36,9 @@ TEST_CASE("Game - SIMPEL TEST"){
     CHECK(p1.cardesTaken() == 0); 
     CHECK(p2.cardesTaken() == 0); 
 
-    CHECK(p5.stacksize() == 0); // player that create but not play any Game 
-
+    // player that create but not play any Game 
+    CHECK(p5.stacksize() == 0); 
+ 
     game.playTurn(); 
     
     if(p2.cardesTaken() >= 2){ // player p2 is win 
@@ -46,6 +50,7 @@ TEST_CASE("Game - SIMPEL TEST"){
     game.playTurn();
     CHECK(p1.stacksize() <= 24);
     CHECK(p2.stacksize() <= 24);
+
 }
 
 TEST_CASE("Game 1 - CHECK_NOTHROW "){
@@ -55,6 +60,7 @@ TEST_CASE("Game 1 - CHECK_NOTHROW "){
     CHECK(p3.cardesTaken() == 0);
     CHECK(p4.cardesTaken() == 0); 
 
+    // player that create but not play any Game 
     CHECK(p5.stacksize() == 0); 
     CHECK(p5.cardesTaken() == 0);
 
@@ -77,7 +83,9 @@ TEST_CASE("Game 1 - CHECK_NOTHROW "){
     CHECK_NOTHROW(game1.playAll());
     CHECK_NOTHROW(game1.printLog());
     CHECK_NOTHROW(game1.printStats());
-
+    CHECK_NOTHROW(game1.playTurn());
+    game1.playTurn();
+    CHECK_NOTHROW(game1.printLastTurn());
 }
 
 
@@ -90,6 +98,7 @@ TEST_CASE("Game 3")
     {
         game3.playTurn();   
     }
+    CHECK(p7.stacksize() == p8.stacksize());
     if(p7.cardesTaken() != p8.cardesTaken()){
         if(p7.cardesTaken() > p8.cardesTaken()){
             CHECK(p7.cardesTaken() > p8.cardesTaken());
