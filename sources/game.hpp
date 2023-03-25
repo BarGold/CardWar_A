@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <string>
-// #include <iostream>
+#include <iostream>
 #include "player.hpp"
 using namespace std;
 
@@ -12,8 +12,8 @@ namespace ariel
     class Game
     {
     private:
-        Player p1;
-        Player p2;
+        Player _p1;
+        Player _p2;
 
         string name_win;
 

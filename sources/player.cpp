@@ -3,10 +3,11 @@
 namespace ariel
 {
         Player::Player(){
-            
-        }
-        Player::Player(string name){
 
+        }
+        Player::Player(string name)
+        {
+            this->_name = name;
         }
 
         string Player::getName(){

@@ -13,7 +13,7 @@ namespace ariel
     {
 
     private:
-        string name;
+        string _name;
         int stack_size;   // amount of cards left
         int cardes_Taken; // amount of cards this player has won.
 
