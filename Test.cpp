@@ -16,15 +16,18 @@ Player p4("Gal");
 // player that create but not play any Game
 Player p5("Niv");
 
+Player p6("Ilana");
 Player p7("Aviv");
 Player p8("Or");
+Player p9("Ilan");
 
 // Create games
 Game game(p1, p2);
 Game game1(p3, p4);
 Game game3(p7, p8);
+Game game4(p9,p6);
 
-TEST_CASE("Game - SIMPEL TEST")
+TEST_CASE("SIMPEL TEST")
 {
 
     // test for stacksize() && cardesTaken() for new game
@@ -51,7 +54,7 @@ TEST_CASE("Game - SIMPEL TEST")
     CHECK(p2.stacksize() <= 24);
 }
 
-TEST_CASE("Game 1 - CHECK_NOTHROW ")
+TEST_CASE("CHECK_NOTHROW ")
 {
     // test for stacksize() && cardesTaken() for new game
     CHECK(p3.stacksize() == 26);
@@ -94,14 +97,21 @@ TEST_CASE("Game 1 - CHECK_NOTHROW ")
     CHECK_NOTHROW(game1.printLastTurn());
 }
 
-TEST_CASE("Game 3")
+TEST_CASE("Game")
 {
+    CHECK(p7.cardesTaken() == p8.cardesTaken());
+    CHECK(p7.cardesTaken() == p9.cardesTaken());
+    CHECK(p7.cardesTaken() == p6.cardesTaken());
+    CHECK(p6.cardesTaken() == p8.cardesTaken());
+    CHECK(p6.stacksize() == p8.stacksize());
     game3.playTurn();
+    game4.playTurn();
     CHECK(p7.cardesTaken() != p8.cardesTaken()); // one of them need to win
     CHECK(p5.stacksize() != 26);                 // p5 dont play a game
     for (int i = 0; i < 6; i++)
     {
         game3.playTurn();
+        game4.playTurn();
     }
     CHECK(p7.stacksize() == p8.stacksize());
     if (p7.cardesTaken() != p8.cardesTaken())
@@ -113,6 +123,18 @@ TEST_CASE("Game 3")
         else
         {
             CHECK(p7.cardesTaken() < p8.cardesTaken());
+        }
+    }
+    CHECK(p6.stacksize() == p9.stacksize());
+    if (p6.cardesTaken() != p9.cardesTaken())
+    {
+        if (p6.cardesTaken() > p9.cardesTaken())
+        {
+            CHECK(p6.cardesTaken() > p9.cardesTaken());
+        }
+        else
+        {
+            CHECK(p6.cardesTaken() < p9.cardesTaken());
         }
     }
 }
