@@ -14,12 +14,11 @@ Player p1("Alice");
 Player p2("Bob");
 Player p3("Bar");
 Player p4("Gal");
-
-Player p5("Niv"); // player that create but not play any Game
+// player that create but not play any Game
+Player p5("Niv"); 
 
 Player p7("Aviv");
 Player p8("Or");
-
 
 
 // Create games
@@ -65,6 +64,10 @@ TEST_CASE("Game 1 - CHECK_NOTHROW "){
     CHECK(p5.cardesTaken() == 0);
 
     game1.playTurn();
+    CHECK_NOTHROW(game1.playAll());
+    CHECK_NOTHROW(game1.printLog());
+    CHECK_NOTHROW(game1.printStats());
+    CHECK_NOTHROW(game1.printLastTurn());
 
     if(p3.cardesTaken() >= 2){ // player p3 is win 
        CHECK(p4.cardesTaken() == 0);
@@ -72,8 +75,9 @@ TEST_CASE("Game 1 - CHECK_NOTHROW "){
     else{ // player p3 is loss
         CHECK(p3.cardesTaken() == 0);
     }
-    CHECK_NOTHROW(game1.printLastTurn());
+
     game1.playTurn();
+    CHECK_NOTHROW(game1.printLastTurn());
     CHECK(p3.stacksize() <= 24);
     CHECK(p4.stacksize() <= 24);
     for (int i=0;i<6;i++)

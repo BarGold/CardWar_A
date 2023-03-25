@@ -21,7 +21,6 @@ namespace ariel
         int draw_amount; //  (draw within a draw counts as 2 draws. )
 
         int war; // count how many war have in 1 turn;
-        // draw rate
 
     public:
         Game(Player p1, Player p2);
@@ -32,7 +31,7 @@ namespace ariel
         void set_name_win();
         string get_name_win();
 
-        //        void set_name_win();
+
         void playTurn();      // play turn
         void printLastTurn(); // print the last turn stats.
 

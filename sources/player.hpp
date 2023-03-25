@@ -1,7 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-// #include <stdio.h>
 #include <string>
 #include "card.hpp"
 using namespace std;
@@ -13,15 +12,14 @@ namespace ariel
     {
 
     private:
-        string _name;
-        int stack_size;   // amount of cards left
-        int cardes_Taken; // amount of cards this player has won.
+        string _name;       // name of player
+        int stack_size;     // amount of cards left
+        int cardes_Taken;   // amount of cards this player has won.
 
         double win_rate;
 
         int win; // if he win 1 , loss 0
-        ariel::Card card_Play; // player card for turn
-        // cards won;
+        Card card_Play; // player card for turn
 
     public:
         Player();
