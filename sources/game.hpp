@@ -1,6 +1,9 @@
 #include <string>
-#include <stdexcept>
+#include <iostream>
 #include "player.hpp"
+
+#ifndef GAME_H
+#define GAME_H
 using namespace std;
 
 namespace ariel
@@ -9,8 +12,8 @@ namespace ariel
     class Game
     {
     private:
-        ariel::Player p1;
-        ariel::Player p2;
+        Player p1;
+        Player p2;
 
         string name_win;
 
@@ -21,7 +24,7 @@ namespace ariel
         // draw rate
 
     public:
-        Game(ariel::Player p1, ariel::Player p2);
+        Game(Player p1, Player p2);
 
         void set_war();
         int get_war();
@@ -40,3 +43,4 @@ namespace ariel
                            // <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
     };
 }
+#endif

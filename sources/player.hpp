@@ -1,10 +1,8 @@
-#include <iostream>
-#include <stdexcept>
 #ifndef PLAYER_H
 #define PLAYER_H
+
+#include <stdio.h>
 #include <string>
-#include <fstream>
-#include <sstream>
 #include "card.hpp"
 using namespace std;
 
@@ -21,11 +19,12 @@ namespace ariel
 
         double win_rate;
 
-        bool win; // if he win 1 , loss 0
+        int win; // if he win 1 , loss 0
         ariel::Card card_Play; // player card for turn
         // cards won;
 
     public:
+        Player();
         Player(string name);
 
         string getName();
@@ -40,7 +39,7 @@ namespace ariel
         double get_win_rate();
 
         void set_win();
-        bool get_win();
+        int get_win();
 
     };
 

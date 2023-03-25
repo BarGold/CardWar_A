@@ -1,5 +1,6 @@
+#ifndef CARD_H
+#define CARD_H
 #include <string>
-#include <stdexcept>
 using namespace std;
 
 namespace ariel{
@@ -14,3 +15,4 @@ namespace ariel{
     };
   
 }
+#endif
