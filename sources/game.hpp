@@ -31,7 +31,6 @@ namespace ariel
         void set_name_win();
         string get_name_win();
 
-
         void playTurn();      // play turn
         void printLastTurn(); // print the last turn stats.
 

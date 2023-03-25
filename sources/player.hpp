@@ -12,13 +12,13 @@ namespace ariel
     {
 
     private:
-        string _name;       // name of player
-        int stack_size;     // amount of cards left
-        int cardes_Taken;   // amount of cards this player has won.
+        string _name;     // name of player
+        int stack_size;   // amount of cards left
+        int cardes_Taken; // amount of cards this player has won.
 
         double win_rate;
 
-        int win; // if he win 1 , loss 0
+        int win;        // if he win 1 , loss 0
         Card card_Play; // player card for turn
 
     public:
@@ -29,7 +29,7 @@ namespace ariel
 
         int stacksize();
         void set_stacksize();
-        
+
         int cardesTaken();
         void set_cardesTaken();
 
@@ -38,7 +38,6 @@ namespace ariel
 
         void set_win();
         int get_win();
-
     };
 
 }
