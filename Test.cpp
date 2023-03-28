@@ -97,7 +97,7 @@ TEST_CASE("CHECK_NOTHROW ")
     CHECK_NOTHROW(game1.printLastTurn());
 }
 
-TEST_CASE("Game")
+TEST_CASE("CHECK_ONE_PLAYER && PLAYER_CAN_GAME_IN_ONE_GAME ")
 {
     CHECK(p7.cardesTaken() == p8.cardesTaken());
     CHECK(p7.cardesTaken() == p9.cardesTaken());
@@ -137,4 +137,11 @@ TEST_CASE("Game")
             CHECK(p6.cardesTaken() < p9.cardesTaken());
         }
     }
+
+    // A player cannot play with himself
+    CHECK_THROWS(Game(p5,p5));
+
+    // A player cannot play in 2 games
+    Player p10("shir");
+    CHECK_THROWS(Game(p9,p10));
 }
